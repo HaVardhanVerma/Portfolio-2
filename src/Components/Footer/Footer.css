@@ -1,0 +1,36 @@
+.footer__section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline: 2rem;
+    padding-block: 1rem;
+}
+
+.footer__name {
+    font-size: 1rem;
+    color: #13f3ca;
+}
+
+.footer__reserved {
+    color: #13f3ca;
+}
+
+@media only screen and (max-width: 556px) {
+    .footer__name {
+        font-size: 0.7rem;
+    }
+    
+    .footer__reserved {
+        font-size: 0.7rem;
+    }
+}
+
+@media only screen and (max-width: 377px) {
+    .footer__name {
+        font-size: 0.6rem;
+    }
+    
+    .footer__reserved {
+        font-size: 0.6rem;
+    }
+}

@@ -1,0 +1,166 @@
+.contact {
+    margin-top: 4rem;
+    padding: 3rem;
+}
+
+.contact__section {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 2rem;
+    gap: 3rem;
+}
+
+.contact__form {
+    border: 2px solid #10203a;
+    border-radius: 2rem;
+}
+
+.contact__links {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2rem;
+}
+
+.contact__socials {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2rem;
+    margin-top: 2.5rem;
+    /* border: 2px solid white; */
+}
+
+.contact__me {
+    font-size: 3rem;
+    color: #1e44e9;
+}
+
+.conatct__social {
+    display: flex;
+    text-decoration: none;
+    gap: 2rem;
+}
+
+.social__name {
+    font-size: 1.2rem;
+    color: #5b7d9c;
+}
+
+.contact__img {
+    width: 50px;
+    height: 50px;
+    /* box-shadow: 1px 1px 2px #1C3661; */
+}
+
+.contact__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.user__form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* border: 2px solid white; */
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.user__data {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    /* border: 2px solid blue; */
+}
+
+.contact__input {
+    padding-inline: 1.25rem;
+    padding-block: 1rem;
+    min-width: 300px;
+    font-size: 0.8rem;
+    border-radius: 0.8rem;
+    background-color: #21232C;
+    border: 2px solid #1C3661;
+    color: #13f3ca;
+}
+
+.user__message {
+    min-width: 100%;
+    min-height: 20rem;
+    border-radius: 0.8rem;
+    padding: 1.25rem 1rem;
+    background-color: #21232C;
+    border: none;
+    color: #13f3ca;
+    border: 2px solid #1C3661
+}
+
+.form__btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 200px;
+    padding: 1rem 1.45rem;
+    border-radius: 1rem;
+    background-color: #1e44e9;
+    border: none;
+    color: rgb(218, 218, 218);
+}
+
+@media only screen and (max-width: 1119px) {
+    .contact__me {
+        text-align: center;
+    }
+
+    .contact__section {
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .contact__form {
+        width: 552px;
+        height: fit-content;
+    }
+
+    .user__data {
+        display: flex;
+        flex-direction: column;
+        min-width: 100%; 
+    }
+
+    .contact__input {
+        min-width: 100%;
+    }
+
+    .contact__me {
+        font-size: 2.5rem;
+    }
+}
+
+@media only screen and (max-width: 558px) {
+    .contact__form {
+        width: 352px;
+    }
+
+    .contact__me {
+        font-size: 2rem;
+    }
+
+    .contact__img {
+        width: 30px;
+        height: 30px;
+    }
+
+    .social__name {
+        font-size: 1rem;
+    }
+}

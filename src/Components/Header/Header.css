@@ -1,0 +1,112 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    /* justify-content: center; */
+    align-items: center;
+    padding-inline: 3rem;
+    padding-block: 2rem;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: #011627;
+    /* From https://css.glass */
+    /* background: rgba(26, 24, 24, 0.2);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px); */
+    /* border: 1px solid rgba(255, 255, 255, 0.3); */
+}
+
+a {
+    text-decoration: none;
+}
+
+.header__name {
+    color: #2eac95;
+    font-size: 1.2rem;
+}
+
+.link {
+    text-decoration: none;
+    color: #EFF2F8;
+}
+
+.active {
+    display: none;
+    
+}
+
+.header__Links {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0%;
+    right: 0%;
+    padding: 2rem;
+    align-items: flex-start;
+    width: 45%;
+    background-color: #011627;
+    height: 100vh;
+    gap: 2rem;
+    transition: left 0.3s;
+    /* background: rgba(0, 0, 0, 0.2);*/
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    /*backdrop-filter: blur(100px);
+    -webkit-backdrop-filter: blur(100px);
+    border: 1px solid rgba(77, 77, 77, 0.3); */
+}
+
+.header__close {
+    display: block;
+    position: absolute;
+    top: 3%;
+    right: 7%;
+}
+
+.header__menu {
+    display: block;
+    cursor: pointer;
+}
+
+@media only screen and (min-width: 750px) {
+    .header__menu {
+        display: none;
+    }
+
+    .header__Links {
+        top: 0%;
+        right: -100%;
+    }
+
+    .active {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .header__close {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 417px) {
+    .header__name {
+        font-size: 1rem;
+    }   
+
+    .header__menu {
+        font-size: 1rem;
+    }
+
+    .link {
+        font-size: 0.9rem;
+    }
+}
+
+@media only screen and (max-width: 366px) {
+    .header__Links a {
+        font-size: 0.8rem;
+    }
+}
