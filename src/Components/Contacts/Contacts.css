@@ -1,6 +1,8 @@
 .contact {
-    margin-top: 4rem;
+    margin-top: 6rem;
     padding: 3rem;
+    min-height: calc(100vh - 6rem);
+    background: linear-gradient(135deg, rgba(1, 22, 39, 0.95) 0%, rgba(1, 22, 39, 0.8) 100%);
 }
 
 .contact__section {
@@ -9,14 +11,28 @@
     align-items: flex-start;
     margin-top: 2rem;
     gap: 3rem;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
 .contact__form {
-    border: 2px solid #10203a;
-    border-radius: 2rem;
+    flex: 1;
+    border: 1px solid rgba(16, 32, 58, 0.5);
+    border-radius: 1rem;
+    background: rgba(39, 39, 38, 0.2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact__form:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(19, 243, 202, 0.1);
 }
 
 .contact__links {
+    flex: 1;
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -30,115 +46,174 @@
     align-items: flex-start;
     gap: 2rem;
     margin-top: 2.5rem;
-    /* border: 2px solid white; */
+    background: rgba(255, 255, 255, 0.03);
+    padding: 2rem;
+    border-radius: 1rem;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .contact__me {
     font-size: 3rem;
     color: #1e44e9;
+    text-align: center;
+    margin-bottom: 2rem;
+    background: linear-gradient(45deg, #1e44e9, #13f3ca);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
 }
 
 .conatct__social {
-    display: flex;
-    text-decoration: none;
-    gap: 2rem;
+    list-style: none;
+    transition: transform 0.3s ease;
+}
+
+.conatct__social:hover {
+    transform: translateX(10px);
 }
 
 .social__name {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     color: #5b7d9c;
+    transition: color 0.3s ease;
+}
+
+.contact__link:hover .social__name {
+    color: #13f3ca;
 }
 
 .contact__img {
-    width: 50px;
-    height: 50px;
-    /* box-shadow: 1px 1px 2px #1C3661; */
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s ease;
+}
+
+.contact__link:hover .contact__img {
+    transform: scale(1.1);
 }
 
 .contact__link {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
-    gap: 2rem;
+    gap: 1.5rem;
+    text-decoration: none;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    transition: background-color 0.3s ease;
+}
+
+.contact__link:hover {
+    background: rgba(255, 255, 255, 0.05);
 }
 
 .user__form {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: stretch;
     justify-content: center;
-    /* border: 2px solid white; */
     gap: 2rem;
     padding: 2rem;
 }
 
 .user__data {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    gap: 3rem;
-    /* border: 2px solid blue; */
+    gap: 2rem;
 }
 
 .contact__input {
-    padding-inline: 1.25rem;
-    padding-block: 1rem;
-    min-width: 300px;
-    font-size: 0.8rem;
+    flex: 1;
+    padding: 1rem 1.25rem;
+    font-size: 0.9rem;
     border-radius: 0.8rem;
-    background-color: #21232C;
-    border: 2px solid #1C3661;
+    background: rgba(33, 35, 44, 0.7);
+    border: 1px solid rgba(28, 54, 97, 0.5);
     color: #13f3ca;
+    transition: all 0.3s ease;
+}
+
+.contact__input:focus,
+.user__message:focus {
+    outline: none;
+    border-color: #13f3ca;
+    box-shadow: 0 0 0 2px rgba(19, 243, 202, 0.1);
+}
+
+.contact__input::placeholder,
+.user__message::placeholder {
+    color: rgba(91, 125, 156, 0.8);
 }
 
 .user__message {
-    min-width: 100%;
-    min-height: 20rem;
+    width: 100%;
+    min-height: 200px;
     border-radius: 0.8rem;
-    padding: 1.25rem 1rem;
-    background-color: #21232C;
-    border: none;
+    padding: 1.25rem;
+    background: rgba(33, 35, 44, 0.7);
+    border: 1px solid rgba(28, 54, 97, 0.5);
     color: #13f3ca;
-    border: 2px solid #1C3661
+    font-family: inherit;
+    font-size: 0.9rem;
+    resize: vertical;
+    transition: all 0.3s ease;
 }
 
 .form__btn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    max-width: 200px;
-    padding: 1rem 1.45rem;
-    border-radius: 1rem;
-    background-color: #1e44e9;
+    align-self: flex-start;
+    padding: 0.8rem 2rem;
+    border-radius: 2rem;
+    background: linear-gradient(45deg, #1e44e9, #13f3ca);
     border: none;
-    color: rgb(218, 218, 218);
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.form__btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.2),
+        transparent
+    );
+    transition: 0.5s;
+}
+
+.form__btn:hover::before {
+    left: 100%;
+}
+
+.form__btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(19, 243, 202, 0.2);
 }
 
 @media only screen and (max-width: 1119px) {
-    .contact__me {
-        text-align: center;
-    }
-
     .contact__section {
-        display: flex;
         flex-direction: column-reverse;
-        justify-content: center;
         align-items: center;
+        gap: 3rem;
     }
 
-    .contact__form {
-        width: 552px;
-        height: fit-content;
-    }
-
-    .user__data {
-        display: flex;
-        flex-direction: column;
-        min-width: 100%; 
-    }
-
-    .contact__input {
-        min-width: 100%;
+    .contact__form,
+    .contact__socials {
+        width: 100%;
+        max-width: 600px;
     }
 
     .contact__me {
@@ -146,21 +221,51 @@
     }
 }
 
-@media only screen and (max-width: 558px) {
-    .contact__form {
-        width: 352px;
+@media only screen and (max-width: 768px) {
+    .contact {
+        padding: 2rem 1rem;
+    }
+
+    .user__data {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .contact__input {
+        width: 100%;
     }
 
     .contact__me {
         font-size: 2rem;
     }
+}
+
+@media only screen and (max-width: 480px) {
+    .contact {
+        padding: 1rem;
+    }
+
+    .user__form {
+        padding: 1.5rem;
+    }
+
+    .contact__socials {
+        padding: 1.5rem;
+    }
 
     .contact__img {
-        width: 30px;
-        height: 30px;
+        width: 25px;
+        height: 25px;
     }
 
     .social__name {
-        font-size: 1rem;
+        font-size: 0.9rem;
     }
+
+    .form__btn {
+        width: 100%;
+        padding: 0.7rem 1.5rem;
+        font-size: 0.8rem;
+    }
+}
 }

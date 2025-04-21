@@ -4,12 +4,16 @@
     /* justify-content: center; */
     align-items: center;
     padding-inline: 3rem;
-    padding-block: 2rem;
+    padding-block: 1.5rem;
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 1000;
-    background-color: #011627;
+    background: rgba(1, 22, 39, 0.85);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
     /* From https://css.glass */
     /* background: rgba(26, 24, 24, 0.2);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -25,88 +29,127 @@ a {
 .header__name {
     color: #2eac95;
     font-size: 1.2rem;
+    font-family: 'Fira Code', monospace;
+    transition: all 0.3s ease;
+    margin: 0;
+}
+
+.header__name:hover {
+    color: #3dd1b6;
 }
 
 .link {
     text-decoration: none;
     color: #EFF2F8;
+    position: relative;
+    transition: all 0.3s ease;
+    font-family: 'Fira Code', monospace;
 }
 
-.active {
-    display: none;
-    
+.link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: #2eac95;
+    transition: width 0.3s ease;
+}
+
+.link:hover {
+    color: #2eac95;
+}
+
+.link:hover::after {
+    width: 100%;
+}
+
+.active-link {
+    color: #13f3ca;
+}
+
+.active-link::after {
+    width: 100%;
+    background-color: #13f3ca;
 }
 
 .header__Links {
     display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: 0%;
-    right: 0%;
-    padding: 2rem;
-    align-items: flex-start;
-    width: 45%;
-    background-color: #011627;
-    height: 100vh;
     gap: 2rem;
-    transition: left 0.3s;
-    /* background: rgba(0, 0, 0, 0.2);*/
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    /*backdrop-filter: blur(100px);
-    -webkit-backdrop-filter: blur(100px);
-    border: 1px solid rgba(77, 77, 77, 0.3); */
+    align-items: center;
 }
 
-.header__close {
-    display: block;
-    position: absolute;
-    top: 3%;
-    right: 7%;
-}
-
-.header__menu {
-    display: block;
+.header__close, .header__menu {
+    display: none;
+    background: none;
+    border: none;
+    padding: 0.5rem;
     cursor: pointer;
+    transition: all 0.3s ease;
 }
 
-@media only screen and (min-width: 750px) {
-    .header__menu {
-        display: none;
+.header__close:hover, .header__menu:hover {
+    color: #13f3ca;
+}
+
+@media screen and (max-width: 768px) {
+    .header {
+        padding-inline: 2rem;
     }
 
     .header__Links {
-        top: 0%;
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
         right: -100%;
+        padding: 2rem;
+        align-items: flex-start;
+        width: 70%;
+        max-width: 300px;
+        background: rgba(1, 22, 39, 0.95);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        height: 100vh;
+        gap: 2rem;
+        transition: right 0.3s ease;
     }
 
-    .active {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 2rem;
+    .header__Links.open {
+        right: 0;
     }
 
     .header__close {
-        display: none;
+        display: block;
+        position: absolute;
+        top: 2rem;
+        right: 2rem;
+    }
+
+    .header__menu {
+        display: block;
+    }
+
+    .link::after {
+        height: 1px;
     }
 }
 
-@media only screen and (max-width: 417px) {
+@media screen and (max-width: 480px) {
+    .header {
+        padding-inline: 1.5rem;
+    }
+
     .header__name {
         font-size: 1rem;
-    }   
+    }
 
-    .header__menu {
-        font-size: 1rem;
+    .header__Links {
+        width: 85%;
     }
 
     .link {
         font-size: 0.9rem;
-    }
-}
-
-@media only screen and (max-width: 366px) {
-    .header__Links a {
-        font-size: 0.8rem;
     }
 }

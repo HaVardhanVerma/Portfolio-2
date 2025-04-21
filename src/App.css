@@ -1,0 +1,36 @@
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  flex: 1;
+  padding-top: 80px; /* Adjust this value based on your header height */
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+/* Add smooth page transitions */
+.main-content > * {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Ensure content doesn't overlap with fixed header */
+@media screen and (max-width: 768px) {
+  .main-content {
+    padding-top: 70px; /* Slightly smaller padding for mobile */
+  }
+}
